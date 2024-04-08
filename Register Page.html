@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="websiteimg/2.png">
+    <script src="https://kit.fontawesome.com/ce3eb5da9b.js" crossorigin="anonymous"></script>
+    <title>Register</title>
+</head>
+<style>
+
+    body 
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: white;
+        font-family: "Intro Rust", sans-serif;
+        font-weight: bold;
+    }
+
+
+    .container {
+        display: flex;
+        height: 100vh;
+    }
+
+    .form-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom, #115d33, #228b22);
+    }
+
+    .form-container h1 {
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: block;
+        width:50%;
+    }
+
+    label {
+        margin-top: 10px;
+    }
+
+    *{
+      padding: 0; margin: 0;
+      box-sizing: border-box;
+  }
+
+  input[type=text], input[type=password], input[type=button], input[type=submit] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+input[type=checkbox] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    background-color: #4CAF50;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="form-container">
+            
+            
+            <form method="post" action="includes/register.inc.php">
+
+                <img src='websiteimg/5.png' style ='height:100px;'><br>
+                <label for="user"><i class="fa-solid fa-user"></i> Username</label>
+                <input type="text" name="username" maxlength="50" placeholder="Enter Username" required><br><br>
+                
+                <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+                <input type="text" name="email" maxlength="50" placeholder="Enter Email" required><br><br>
+                
+                <label for="pass"><i class="fa-solid fa-lock"></i> Password</label>
+                <input type="password" name="password" id="password" maxlength="25" placeholder="Enter Password" required> 
+                
+                <input type="checkbox" onclick="togglePasswordVisibility('password')">Show Password<br><br>
+                
+                <label for="confirm_pass"><i class="fa-solid fa-lock"></i> Confirm Password</label>
+                <input type="password" name="confirm_password" id="confirm_password" maxlength="25" placeholder="Confirm Password" required><br><br>
+                
+                <button type="submit" name="register_btn" style="background: linear-gradient(to right, #3498db, #1abc9c); color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;width: 100%;"><i class="fa-solid fa-right-to-bracket"></i> Register</button><br><br>
+                <button onclick="window.location.href='login.php'" style="background: linear-gradient(to right, #3498db, #e74c3c); color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;width: 100%;"><i class="fa-solid fa-sign-in-alt"></i> Already have an account? Login</button>
+            </form>
+            
+        </div>
+        <div class="image-container">
+            <img src="https://scontent.fcrk1-3.fna.fbcdn.net/v/t39.30808-6/361263902_716959293775243_6613115422450962172_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=E0Io913_hZIAX9DShi5&_nc_ht=scontent.fcrk1-3.fna&oh=00_AfCRx2IMZWX5Vu-oILduVK1EL8nYCm2w2wkrzCi4DspoLg&oe=660EA73A">
+        </div>
+        
+    </div>
+    
+    <script>
+        function togglePasswordVisibility(inputId) {
+          var x = document.getElementById(inputId);
+          if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+</body>
+</html>
